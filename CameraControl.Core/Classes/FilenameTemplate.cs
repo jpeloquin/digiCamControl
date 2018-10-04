@@ -96,6 +96,11 @@ namespace CameraControl.Core.Classes
                     var date = new DateTime(1970, 1, 1, 0, 0, 0, DateTime.Now.Kind);
                     var unixTimestamp = System.Convert.ToInt64((DateTime.Now - date).TotalSeconds);
                     return unixTimestamp.ToString();
+                case "[Unix Time (decimal)]":
+                    var dateUnixEpoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTime.Now.Kind);
+                    var unixTimestampPrecise = (DateTime.Now - dateUnixEpoch).TotalSeconds;
+                    // DateTime should be precise to 100 ns; accurate to ±15 ms on Windows 7 and 8
+                    return unixTimestampPrecise.ToString("0.###");
                 case "[DB Row 1]":
                     return (session.ExternalData != null && session.ExternalData.Row1 != null)
                         ? session.ExternalData.Row1

@@ -44,6 +44,7 @@ namespace CameraControl.Core.Classes
             Templates.Add("[Selected Tag3]", templatePharser);
             Templates.Add("[Selected Tag4]", templatePharser);
             Templates.Add("[Unix Time]", templatePharser);
+            Templates.Add("[Unix Time (decimal)]", templatePharser);
             Templates.Add("[Original Filename]", templatePharser);
 
             Templates.Add("[Counter 3 digit]", templatePharser);
